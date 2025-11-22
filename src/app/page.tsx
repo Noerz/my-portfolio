@@ -17,7 +17,7 @@ export default async function Home() {
       <div className="min-h-screen flex flex-col">
       <div className="relative bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-zinc-950 dark:via-blue-950 dark:to-purple-950 border-b border-zinc-200 dark:border-zinc-800 overflow-hidden">
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>
-        <div className="relative max-w-5xl mx-auto px-4 py-24 md:py-32">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 mt-16 sm:mt-0">
           <Hero data={data.owner} />
         </div>
       </div>

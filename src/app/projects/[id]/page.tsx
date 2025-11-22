@@ -177,7 +177,7 @@ export default async function ProjectDetailPage({
         {/* Back to Projects */}
         <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800 text-center opacity-0 animate-fade-in">
           <Link
-            href="/#projects"
+            href="/projects"
             className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg font-semibold hover:scale-105 transition-transform"
           >
             ← Lihat Proyek Lainnya

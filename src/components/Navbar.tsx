@@ -39,14 +39,14 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 opacity-0 animate-fade-in">
-        <div className="flex items-center gap-2 px-6 py-3 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl rounded-full shadow-lg border border-zinc-200/50 dark:border-zinc-800/50">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 opacity-0 animate-fade-in w-[95%] max-w-4xl">
+        <div className="flex items-center justify-center gap-1 sm:gap-2 px-3 sm:px-6 py-2 sm:py-3 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl rounded-full shadow-lg border border-zinc-200/50 dark:border-zinc-800/50">
           {sections.map((section, index) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
               className={`
-                group flex items-center gap-2 px-4 py-2 rounded-full
+                group flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 rounded-full
                 transition-all duration-300 ease-out
                 hover:scale-105
                 ${
@@ -61,10 +61,10 @@ export function Navbar() {
                 opacity: 0
               }}
             >
-              <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+              <span className="text-base sm:text-lg group-hover:scale-110 transition-transform duration-300">
                 {section.icon}
               </span>
-              <span className="text-sm font-medium tracking-wide hidden md:inline">
+              <span className="text-xs sm:text-sm font-medium tracking-wide hidden md:inline">
                 {section.label}
               </span>
             </button>
@@ -76,9 +76,9 @@ export function Navbar() {
       <button
         onClick={scrollToTop}
         className={`
-          fixed bottom-8 right-8 z-50
+          fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-50
           flex items-center justify-center
-          w-12 h-12 rounded-full
+          w-11 h-11 sm:w-12 sm:h-12 rounded-full
           bg-gradient-to-r from-blue-500 to-purple-600
           text-white shadow-lg
           hover:scale-110 hover:shadow-xl
@@ -88,7 +88,7 @@ export function Navbar() {
         aria-label="Scroll to top"
       >
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5 sm:w-6 sm:h-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
