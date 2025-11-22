@@ -63,4 +63,62 @@ export const projects: Project[] = [
     ],
     architecture: "Core: TypeScript dengan strict mode.\nBuild: Vite untuk bundling dengan multiple output formats (ESM, CJS, UMD).\nTesting: Vitest dengan custom service worker mocks."
   },
+  {
+    id: "p4",
+    name: "E-Commerce Mobile App",
+    description: "Aplikasi mobile e-commerce dengan React Native dan payment gateway integration.",
+    longDescription: "Aplikasi mobile e-commerce full-featured dengan keranjang belanja, payment gateway, dan order tracking real-time.",
+    techStack: ["React Native", "Redux Toolkit", "Stripe", "Firebase"],
+    year: 2024,
+    featured: true
+  },
+  {
+    id: "p5",
+    name: "API Gateway Microservices",
+    description: "Backend microservices dengan Node.js, GraphQL, dan containerization.",
+    longDescription: "Arsitektur microservices lengkap dengan API gateway, service discovery, dan monitoring.",
+    techStack: ["Node.js", "GraphQL", "Docker", "Kubernetes", "PostgreSQL"],
+    year: 2024
+  },
+  {
+    id: "p6",
+    name: "Real-Time Chat Application",
+    description: "Aplikasi chat real-time dengan WebSocket dan end-to-end encryption.",
+    longDescription: "Platform komunikasi real-time dengan fitur group chat, file sharing, dan video call.",
+    techStack: ["Socket.io", "React", "Express", "MongoDB", "WebRTC"],
+    year: 2023
+  },
+  {
+    id: "p7",
+    name: "AI Content Generator",
+    description: "Tool berbasis AI untuk generate konten marketing dan blog posts.",
+    longDescription: "Platform AI-powered untuk membantu content creators menghasilkan ide dan draft artikel dengan cepat.",
+    techStack: ["Next.js", "OpenAI API", "Prisma", "PostgreSQL"],
+    year: 2025,
+    featured: true
+  },
+  {
+    id: "p8",
+    name: "Task Management System",
+    description: "Aplikasi manajemen proyek dengan kanban board dan time tracking.",
+    longDescription: "System manajemen tugas dengan fitur kolaborasi tim, deadline tracking, dan reporting.",
+    techStack: ["Vue.js", "Nuxt", "Supabase", "TailwindCSS"],
+    year: 2023
+  },
+  {
+    id: "p9",
+    name: "Portfolio CMS",
+    description: "Headless CMS khusus untuk portfolio developers dan designers.",
+    longDescription: "Content Management System yang dirancang khusus untuk kreator membuat dan manage portfolio mereka.",
+    techStack: ["Strapi", "React Admin", "PostgreSQL", "AWS S3"],
+    year: 2024
+  },
+  {
+    id: "p10",
+    name: "Weather Forecast App",
+    description: "Aplikasi cuaca dengan data real-time dan prediksi 7 hari.",
+    longDescription: "Aplikasi prakiraan cuaca dengan visualisasi interaktif dan notifikasi cuaca ekstrem.",
+    techStack: ["React", "OpenWeather API", "Chart.js", "PWA"],
+    year: 2023
+  },
 ];

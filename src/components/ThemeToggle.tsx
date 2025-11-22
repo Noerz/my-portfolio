@@ -10,19 +10,21 @@ export function ThemeToggle() {
     setMounted(true);
     
     // Check current theme
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setIsDark(isDarkMode);
+    const storedTheme = localStorage.getItem("theme");
     
-    // If no theme set, check localStorage or system preference
-    if (!localStorage.getItem("theme")) {
-      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (systemPrefersDark) {
+    if (!storedTheme) {
+      // Default to dark mode if no theme is set
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    } else {
+      const isDarkMode = storedTheme === "dark";
+      if (isDarkMode) {
         document.documentElement.classList.add("dark");
-        setIsDark(true);
-        localStorage.setItem("theme", "dark");
       } else {
-        localStorage.setItem("theme", "light");
+        document.documentElement.classList.remove("dark");
       }
+      setIsDark(isDarkMode);
     }
   }, []);
 

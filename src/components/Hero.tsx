@@ -7,7 +7,7 @@ interface HeroProps {
 
 export function Hero({ data }: HeroProps) {
   return (
-    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+    <div className="flex flex-col md:flex-row items-top gap-8 md:gap-12">
       {/* Avatar */}
       <div className="opacity-0 animate-scale-in">
         <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-4 ring-blue-500/20 dark:ring-purple-500/20 shadow-xl">

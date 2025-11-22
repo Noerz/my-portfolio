@@ -107,6 +107,69 @@ export const getPortfolioData = cache(async (): Promise<PortfolioData> => {
         slug: "react-server-components",
         tags: ["react", "nextjs", "performance"],
         readTime: "10 min"
+      },
+      {
+        id: "blog-4",
+        title: "Web Performance 101: Cara Bikin Website Secepat Kilat",
+        excerpt: "Tips dan trik praktis untuk optimasi web performance dari lazy loading sampai code splitting.",
+        date: "2024-10-28",
+        slug: "web-performance-101",
+        tags: ["performance", "optimization", "tutorial"],
+        readTime: "8 min"
+      },
+      {
+        id: "blog-5",
+        title: "State Management di React: Redux vs Zustand vs Context API",
+        excerpt: "Perbandingan mendalam antara berbagai solusi state management untuk aplikasi React modern.",
+        date: "2024-10-20",
+        slug: "state-management-comparison",
+        tags: ["react", "state-management", "tutorial"],
+        readTime: "12 min"
+      },
+      {
+        id: "blog-6",
+        title: "Microservices vs Monolith: Kapan Harus Pakai Yang Mana?",
+        excerpt: "Panduan memilih arsitektur yang tepat untuk aplikasi Anda berdasarkan scale dan kompleksitas.",
+        date: "2024-10-15",
+        slug: "microservices-vs-monolith",
+        tags: ["architecture", "backend", "opinion"],
+        readTime: "9 min"
+      },
+      {
+        id: "blog-7",
+        title: "Docker untuk Developer: Getting Started Guide",
+        excerpt: "Tutorial lengkap menggunakan Docker untuk development environment yang konsisten dan reproducible.",
+        date: "2024-10-08",
+        slug: "docker-getting-started",
+        tags: ["docker", "devops", "tutorial"],
+        readTime: "15 min"
+      },
+      {
+        id: "blog-8",
+        title: "CSS Grid vs Flexbox: Mana yang Harus Dipakai?",
+        excerpt: "Penjelasan kapan menggunakan CSS Grid dan kapan Flexbox untuk layout yang optimal.",
+        date: "2024-09-30",
+        slug: "css-grid-vs-flexbox",
+        tags: ["css", "frontend", "tutorial"],
+        readTime: "6 min"
+      },
+      {
+        id: "blog-9",
+        title: "API Design Best Practices: RESTful vs GraphQL",
+        excerpt: "Tips merancang API yang maintainable dan developer-friendly dengan REST atau GraphQL.",
+        date: "2024-09-22",
+        slug: "api-design-best-practices",
+        tags: ["api", "backend", "best-practices"],
+        readTime: "11 min"
+      },
+      {
+        id: "blog-10",
+        title: "Testing di JavaScript: Unit, Integration, dan E2E",
+        excerpt: "Panduan lengkap testing strategy untuk aplikasi JavaScript modern dengan Jest dan Playwright.",
+        date: "2024-09-15",
+        slug: "javascript-testing-guide",
+        tags: ["testing", "javascript", "tutorial"],
+        readTime: "13 min"
       }
     ]
   };

@@ -10,7 +10,11 @@ export function AboutSection({ bio }: AboutSectionProps) {
       <div className="max-w-3xl mx-auto space-y-6">
         <div className="prose dark:prose-invert max-w-none text-sm md:text-base opacity-0 animate-fade-in-up delay-100">
           <div className="bg-white dark:bg-gradient-to-br dark:from-zinc-900 dark:to-blue-950 p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
-            <div className="text-4xl mb-4">👋</div>
+            <div className="text-4xl mb-4">
+              <span role="img" aria-label="wave" className="inline-block motion-safe:animate-bounce transform origin-bottom">
+                👋
+              </span>
+            </div>
             <p className="leading-relaxed text-base mb-4 text-zinc-700 dark:text-zinc-300">
               Halo! Saya seorang developer yang passionate dalam menciptakan aplikasi web yang tidak hanya berfungsi, 
               tapi juga memberikan pengalaman yang menyenangkan bagi penggunanya.

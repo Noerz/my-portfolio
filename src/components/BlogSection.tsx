@@ -1,5 +1,6 @@
 import { Section } from "@/components/Section";
 import { BlogPost } from "@/types/portfolio";
+import Link from "next/link";
 
 interface BlogSectionProps {
   posts: BlogPost[];
@@ -7,11 +8,14 @@ interface BlogSectionProps {
 
 export function BlogSection({ posts }: BlogSectionProps) {
   if (!posts || posts.length === 0) return null;
+  
+  // Show only first 6 posts on homepage
+  const displayPosts = posts.slice(0, 6);
 
   return (
     <Section id="blog" title="Blog & Catatan Teknis">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post, index) => (
+        {displayPosts.map((post, index) => (
           <article
             key={post.id}
             className="group bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-scale-in"
@@ -63,6 +67,20 @@ export function BlogSection({ posts }: BlogSectionProps) {
           </article>
         ))}
       </div>
+      
+      {posts.length > 6 && (
+        <div className="mt-8 text-center">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Lihat Semua Artikel ({posts.length})
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      )}
     </Section>
   );
 }
