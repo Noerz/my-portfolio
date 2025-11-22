@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Portfolio Next.js
 
-## Getting Started
+Struktur awal proyek portfolio pribadi berbasis Next.js (App Router) dengan dummy data dan arsitektur yang mudah di-scale ke backend API nanti.
 
-First, run the development server:
+### Jalankan Lokal
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Struktur Direktori Penting
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+	types/            // Domain types (Project, PortfolioData)
+	data/             // Dummy data sementara
+	lib/              // Service layer (getPortfolioData)
+	components/       // Komponen presentational & section wrappers
+	app/              // Next.js app router pages & layout
+```
 
-## Learn More
+### Prinsip & Best Practice
 
-To learn more about Next.js, take a look at the following resources:
+- Single Responsibility: setiap komponen fokus pada 1 hal (Hero, ProjectsSection, dll).
+- Dependency Inversion: UI tidak langsung hardcode fetch API; gunakan service `getPortfolioData`.
+- Open/Closed: mudah menambah section baru tanpa ubah yang lama.
+- Domain Model: `src/types/portfolio.ts` memisahkan bentuk data dari implementasi fetch.
+- Caching: gunakan `cache()` React server utility di service untuk konsistensi rendering.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Migrasi ke Backend Nyata
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Sediakan env var: `NEXT_PUBLIC_API_BASE_URL` (misal di `.env.local`).
+2. Ubah `getPortfolioData` di `src/lib/portfolioService.ts`:
+	 ```ts
+	 export const getPortfolioData = cache(async () => {
+		 const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio`, { next: { revalidate: 60 } });
+		 if (!res.ok) throw new Error("Failed to load portfolio");
+		 return (await res.json()) as PortfolioData;
+	 });
+	 ```
+3. Atur policy revalidate sesuai kebutuhan (ISR / dynamic).
+4. Tambah error boundary / loading UI (komponen `error.tsx` & `loading.tsx` di folder `app`).
 
-## Deploy on Vercel
+### Menambah Proyek Baru (Dummy)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit `src/data/projects.ts` dan tambahkan object dengan field sesuai tipe `Project`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Testing & Quality (Langkah Berikutnya)
+
+- Unit test komponen dengan Vitest / Jest (belum disetup).
+- Lighthouse audit untuk performa & accessibility.
+- Tambah ESLint rule custom jika perlu (sudah strict mode aktif TypeScript).
+
+### Deployment
+
+Dapat langsung deploy ke Vercel: `vercel` atau hubungkan repo Git. Build command default `next build`.
+
+### Lisensi
+
+Tambahkan lisensi jika ingin publik. Saat ini proyek pribadi.
+
+---
+Made with Next.js & TailwindCSS.
+"# my-portfolio" 
