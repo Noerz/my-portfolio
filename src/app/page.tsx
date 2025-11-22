@@ -41,7 +41,7 @@ export default async function Home() {
       <ContactSection owner={data.owner} />
       
       <footer className="mt-auto py-12 text-center text-sm text-zinc-500 dark:text-zinc-400 border-t border-zinc-200 dark:border-zinc-800">
-        <p className="opacity-0 animate-fade-in">© {new Date().getFullYear()} {data.owner.name}. Dibuat dengan ❤️ & Next.js</p>
+        <p className="opacity-0 animate-fade-in">© {new Date().getFullYear()} {data.owner.name}. Dibuat dengan ❤️ & Next</p>
       </footer>
       </div>
     </>

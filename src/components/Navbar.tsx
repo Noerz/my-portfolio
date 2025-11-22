@@ -4,8 +4,8 @@ import React, { useCallback, useState, useEffect } from "react";
 
 const sections = [
   { id: "about", label: "Tentang", icon: "👤" },
-  { id: "projects", label: "Proyek", icon: "💼" },
   { id: "skills", label: "Keahlian", icon: "⚡" },
+  { id: "projects", label: "Proyek", icon: "💼" },
   { id: "experience", label: "Pengalaman", icon: "🎯" },
   { id: "blog", label: "Blog", icon: "📝" },
   { id: "contact", label: "Kontak", icon: "📧" },
@@ -31,9 +31,39 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
+
+      // Detect active section based on scroll position
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // center of viewport
+      let foundSection = "";
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            foundSection = section.id;
+          }
+        }
+      }
+
+      // Check if we're at the bottom of the page
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+        // Set to the last section (contact)
+        foundSection = sections[sections.length - 1].id;
+      }
+
+      // If at the top of the page, clear active section
+      if (window.scrollY < 100) {
+        foundSection = "";
+      }
+
+      setActiveSection(foundSection);
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Call once on mount to set initial state
+    handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

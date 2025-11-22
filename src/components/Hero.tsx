@@ -29,8 +29,10 @@ export function Hero({ data }: HeroProps) {
 
       {/* Content */}
       <div className="flex flex-col gap-4 md:gap-6 flex-1 text-center md:text-left">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight gradient-text opacity-0 animate-fade-in-up">
-          {data.heroName ?? data.name}
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight opacity-0 animate-fade-in-up">
+          <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent inline-block">
+            {data.heroName ?? data.name}
+          </span>
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-medium opacity-0 animate-fade-in-up delay-100">
           {data.role} • {data.location}

@@ -14,7 +14,7 @@ export function BlogSection({ posts }: BlogSectionProps) {
   const displayPosts = posts.slice(0, 6);
 
   return (
-    <Section id="blog" title="Blog & Catatan Teknis">
+    <Section id="blog" title="Blog Dan Catatan Teknis">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayPosts.map((post, index) => (
           <AnimateOnScroll

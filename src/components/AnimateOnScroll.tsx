@@ -32,7 +32,9 @@ export function AnimateOnScroll({
             setTimeout(() => {
               element.classList.add("aos-animate");
             }, delay);
-            observer.unobserve(element);
+          } else {
+            // Remove class when element leaves viewport
+            element.classList.remove("aos-animate");
           }
         });
       },
