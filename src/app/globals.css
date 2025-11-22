@@ -108,6 +108,67 @@ html, * {
   }
 }
 
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate On Scroll Styles */
+.aos-element {
+  opacity: 0;
+}
+
+.aos-element.aos-animate {
+  opacity: 1;
+}
+
+.aos-fade-up {
+  animation-name: fadeInUp;
+  animation-timing-function: ease-out;
+}
+
+.aos-fade-in {
+  animation-name: fadeIn;
+  animation-timing-function: ease-out;
+}
+
+.aos-fade-down {
+  animation-name: fadeInDown;
+  animation-timing-function: ease-out;
+}
+
+.aos-slide-left {
+  animation-name: slideInLeft;
+  animation-timing-function: ease-out;
+}
+
+.aos-slide-right {
+  animation-name: slideInRight;
+  animation-timing-function: ease-out;
+}
+
+.aos-scale {
+  animation-name: scaleIn;
+  animation-timing-function: ease-out;
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }

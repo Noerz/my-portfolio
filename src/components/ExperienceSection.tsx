@@ -1,5 +1,6 @@
 import { Section } from "@/components/Section";
 import { Experience } from "@/types/portfolio";
+import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 
 interface ExperienceSectionProps {
   experiences: Experience[];
@@ -12,11 +13,13 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
     <Section id="experience" title="Pengalaman">
       <div className="max-w-3xl mx-auto space-y-6">
         {experiences.map((exp, index) => (
-          <div
+          <AnimateOnScroll
             key={exp.id}
-            className="bg-white dark:bg-gradient-to-br dark:from-zinc-900 dark:to-slate-900 p-6 md:p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm opacity-0 animate-fade-in-up hover:shadow-md transition-shadow"
-            style={{ animationDelay: `${index * 0.1}s` }}
+            animation="fade-up"
+            delay={index * 150}
+            duration={600}
           >
+            <div className="bg-white dark:bg-gradient-to-br dark:from-zinc-900 dark:to-slate-900 p-6 md:p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
               <div>
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
@@ -68,6 +71,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
               </div>
             )}
           </div>
+          </AnimateOnScroll>
         ))}
       </div>
     </Section>
