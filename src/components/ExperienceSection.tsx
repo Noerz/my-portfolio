@@ -1,16 +1,20 @@
+"use client";
+
 import { Section } from "@/components/Section";
 import { Experience } from "@/types/portfolio";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ExperienceSectionProps {
   experiences: Experience[];
 }
 
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
+  const { t } = useLanguage();
   if (!experiences || experiences.length === 0) return null;
 
   return (
-    <Section id="experience" title="Pengalaman">
+    <Section id="experience" title={t("experience.title")}>
       <div className="max-w-3xl mx-auto space-y-6">
         {experiences.map((exp, index) => (
           <AnimateOnScroll
@@ -42,7 +46,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
             {exp.achievements && exp.achievements.length > 0 && (
               <div className="mb-4">
                 <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
-                  ✨ Kontribusi & Pencapaian:
+                  ✨ {t("experience.achievements")}
                 </h4>
                 <ul className="space-y-1">
                   {exp.achievements.map((achievement, i) => (

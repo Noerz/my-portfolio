@@ -1,20 +1,25 @@
+"use client";
+
 import { Section } from "@/components/Section";
 import { Skill } from "@/types/portfolio";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface SkillsSectionProps {
   skills: Skill[];
 }
 
-const categoryLabels: Record<string, { label: string; emoji: string; color: string }> = {
-  language: { label: "Bahasa Pemrograman", emoji: "💻", color: "from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950" },
-  framework: { label: "Framework & Library", emoji: "⚡", color: "from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950" },
-  tool: { label: "Tools & Platform", emoji: "🛠️", color: "from-green-50 to-teal-50 dark:from-green-950 dark:to-teal-950" },
-  database: { label: "Database", emoji: "🗄️", color: "from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950" },
-  other: { label: "Lainnya", emoji: "📦", color: "from-zinc-50 to-slate-50 dark:from-zinc-900 dark:to-slate-900" },
-};
-
 export function SkillsSection({ skills }: SkillsSectionProps) {
+  const { t } = useLanguage();
+  
+  const categoryLabels: Record<string, { label: string; emoji: string; color: string }> = {
+    language: { label: t("skills.language"), emoji: "💻", color: "from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950" },
+    framework: { label: t("skills.framework"), emoji: "⚡", color: "from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950" },
+    tool: { label: t("skills.tool"), emoji: "🛠️", color: "from-green-50 to-teal-50 dark:from-green-950 dark:to-teal-950" },
+    database: { label: t("skills.database"), emoji: "🗄️", color: "from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950" },
+    other: { label: t("skills.other"), emoji: "📦", color: "from-zinc-50 to-slate-50 dark:from-zinc-900 dark:to-slate-900" },
+  };
+  
   const groupedSkills = skills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
       acc[skill.category] = [];
@@ -24,7 +29,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
   }, {} as Record<string, Skill[]>);
 
   return (
-    <Section id="skills" title="Keahlian Teknis">
+    <Section id="skills" title={t("skills.title")}>
       <div className="grid md:grid-cols-2 gap-6">
         {Object.entries(groupedSkills).map(([category, categorySkills], index) => {
           const categoryInfo = categoryLabels[category] || categoryLabels.other;

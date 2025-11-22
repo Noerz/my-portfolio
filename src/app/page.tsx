@@ -6,6 +6,7 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { BlogSection } from "@/components/BlogSection";
 import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default async function Home() {
@@ -40,9 +41,7 @@ export default async function Home() {
       
       <ContactSection owner={data.owner} />
       
-      <footer className="mt-auto py-12 text-center text-sm text-zinc-500 dark:text-zinc-400 border-t border-zinc-200 dark:border-zinc-800">
-        <p className="opacity-0 animate-fade-in">© {new Date().getFullYear()} {data.owner.name}. Dibuat dengan ❤️ & Next</p>
-      </footer>
+      <Footer ownerName={data.owner.name} />
       </div>
     </>
   );

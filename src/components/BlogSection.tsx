@@ -1,6 +1,9 @@
+"use client";
+
 import { Section } from "@/components/Section";
 import { BlogPost } from "@/types/portfolio";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 
 interface BlogSectionProps {
@@ -8,13 +11,14 @@ interface BlogSectionProps {
 }
 
 export function BlogSection({ posts }: BlogSectionProps) {
+  const { t } = useLanguage();
   if (!posts || posts.length === 0) return null;
   
   // Show only first 6 posts on homepage
   const displayPosts = posts.slice(0, 6);
 
   return (
-    <Section id="blog" title="Blog Dan Catatan Teknis">
+    <Section id="blog" title={t("blog.title")}>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayPosts.map((post, index) => (
           <AnimateOnScroll
@@ -64,7 +68,7 @@ export function BlogSection({ posts }: BlogSectionProps) {
                 href={`/blog/${post.slug}`}
                 className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:gap-2 transition-all"
               >
-                Baca selengkapnya
+                {t("blog.readMore")}
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </article>
@@ -79,7 +83,7 @@ export function BlogSection({ posts }: BlogSectionProps) {
               href="/blog"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              Lihat Semua Artikel ({posts.length})
+              {t("blog.viewAll")} ({posts.length})
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

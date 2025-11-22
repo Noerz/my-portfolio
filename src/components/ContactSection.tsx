@@ -1,20 +1,23 @@
+"use client";
+
 import { Section } from "@/components/Section";
 import { PortfolioData } from "@/types/portfolio";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ContactSectionProps {
   owner: PortfolioData["owner"];
 }
 
 export function ContactSection({ owner }: ContactSectionProps) {
+  const { t } = useLanguage();
+  
   return (
-    <Section id="contact" title="Kontak">
+    <Section id="contact" title={t("contact.title")}>
       <div className="flex flex-col gap-6 max-w-2xl mx-auto">
         <AnimateOnScroll animation="fade-in" duration={600}>
           <p className="text-base text-center text-zinc-600 dark:text-zinc-400">
-            Jangan ragu untuk menghubungi saya jika ingin berdiskusi seputar
-            teknologi atau menjajaki peluang kolaborasi. Kopi virtual selalu
-            tersedia untuk perbincangan yang seru.” ☕
+            {t("contact.description")}
           </p>
         </AnimateOnScroll>
         <div className="grid md:grid-cols-3 gap-4 mt-4">
@@ -26,7 +29,7 @@ export function ContactSection({ owner }: ContactSectionProps) {
               >
                 <div className="text-3xl mb-3">📧</div>
                 <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
-                  Email
+                  {t("contact.email")}
                 </div>
                 <div className="text-sm text-blue-600 dark:text-blue-400 group-hover:underline break-all">
                   {owner.email}
@@ -45,7 +48,7 @@ export function ContactSection({ owner }: ContactSectionProps) {
               >
                 <div className="text-3xl mb-3">🐙</div>
                 <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
-                  GitHub
+                  {t("contact.github")}
                 </div>
                 <div className="text-sm text-purple-600 dark:text-purple-400 group-hover:underline">
                   @{owner.github.split("/").pop()}
@@ -64,10 +67,10 @@ export function ContactSection({ owner }: ContactSectionProps) {
               >
                 <div className="text-3xl mb-3">👔</div>
                 <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
-                  LinkedIn
+                  {t("contact.linkedin")}
                 </div>
                 <div className="text-sm text-green-600 dark:text-green-400 group-hover:underline">
-                  mustaqim-pratama
+                  {t("contact.profile")}
                 </div>
               </a>
             </AnimateOnScroll>

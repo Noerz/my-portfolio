@@ -1,4 +1,7 @@
+"use client";
+
 import { PortfolioData } from "@/types/portfolio";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 
 interface HeroProps {
@@ -6,6 +9,8 @@ interface HeroProps {
 }
 
 export function Hero({ data }: HeroProps) {
+  const { t } = useLanguage();
+  
   return (
     <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
       {/* Avatar */}
@@ -45,13 +50,13 @@ export function Hero({ data }: HeroProps) {
             href="#projects"
             className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
-            Lihat Proyek
+            {t("hero.viewProjects")}
           </a>
           <a
             href="#contact"
             className="rounded-full border-2 border-zinc-300 dark:border-zinc-600 px-6 py-2.5 text-sm font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 transition-all duration-300"
           >
-            Kontak
+            {t("hero.contact")}
           </a>
         </div>
       </div>

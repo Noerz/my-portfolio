@@ -1,19 +1,21 @@
 "use client";
 
 import React, { useCallback, useState, useEffect } from "react";
-
-const sections = [
-  { id: "about", label: "Tentang", icon: "👤" },
-  { id: "skills", label: "Keahlian", icon: "⚡" },
-  { id: "projects", label: "Proyek", icon: "💼" },
-  { id: "experience", label: "Pengalaman", icon: "🎯" },
-  { id: "blog", label: "Blog", icon: "📝" },
-  { id: "contact", label: "Kontak", icon: "📧" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Navbar() {
+  const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState<string>("");
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const sections = [
+    { id: "about", label: t("nav.about"), icon: "👤" },
+    { id: "skills", label: t("nav.skills"), icon: "⚡" },
+    { id: "projects", label: t("nav.projects"), icon: "💼" },
+    { id: "experience", label: t("nav.experience"), icon: "🎯" },
+    { id: "blog", label: t("nav.blog"), icon: "📝" },
+    { id: "contact", label: t("nav.contact"), icon: "📧" },
+  ];
 
   const scrollToSection = useCallback((id: string) => {
     const el = document.getElementById(id);
@@ -65,7 +67,7 @@ export function Navbar() {
     handleScroll();
     
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sections]);
 
   return (
     <>
