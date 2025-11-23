@@ -211,3 +211,63 @@ html, * {
   }
 }
 
+/* Custom Cursor Styles */
+.custom-cursor-dot,
+.custom-cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+.dark .custom-cursor-dot {
+  background: linear-gradient(135deg, #a8c0ff 0%, #3f5efb 100%);
+  box-shadow: 0 0 15px rgba(168, 192, 255, 0.6);
+}
+
+.custom-cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(102, 126, 234, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  animation: cursorPulse 2s infinite ease-in-out;
+}
+
+.dark .custom-cursor-ring {
+  border-color: rgba(168, 192, 255, 0.5);
+}
+
+@keyframes cursorPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+/* Hide default cursor on desktop */
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    cursor: none !important;
+  }
+}
+
