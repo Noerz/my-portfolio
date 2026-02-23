@@ -261,12 +261,7 @@ html, * {
 
 /* Hide default cursor on desktop */
 @media (pointer: fine) {
-  body,
-  a,
-  button,
-  input,
-  textarea,
-  select {
+  * {
     cursor: none !important;
   }
 }

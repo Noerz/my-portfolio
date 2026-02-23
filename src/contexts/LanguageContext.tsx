@@ -79,7 +79,7 @@ const translations = {
     "contact.email": "Email",
     "contact.github": "GitHub",
     "contact.linkedin": "LinkedIn",
-    "contact.profile": "Profil",
+    "contact.profile": "Mustaqim Pratama",
     
     // Footer
     "footer.builtWith": "Dibuat dengan",
@@ -152,7 +152,7 @@ const translations = {
     "contact.email": "Email",
     "contact.github": "GitHub",
     "contact.linkedin": "LinkedIn",
-    "contact.profile": "Profile",
+    "contact.profile": "Mustaqim Pratama",
     
     // Footer
     "footer.builtWith": "Built with",
