@@ -1,6 +1,6 @@
 import { PortfolioData } from "@/types/portfolio";
 import { projects } from "@/data/projects";
-import { getBlogPosts } from "@/lib/blogContent";
+import { getBlogPosts } from "./blogContent";
 import { cache } from "react";
 
 // Future: replace with real fetch to backend
