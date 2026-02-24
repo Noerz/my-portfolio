@@ -40,7 +40,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
               delay={index * 150}
               duration={600}
             >
-              <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm h-full">
+              <div className={`bg-gradient-to-br ${categoryInfo.color} p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm h-full`}>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{categoryInfo.emoji}</span>
                   <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{categoryInfo.label}</h3>
@@ -54,7 +54,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
                       <div>{skill.name}</div>
                       {skill.description && (
                         <div className="text-xs font-normal text-zinc-600 dark:text-zinc-300 mt-1">
-                          {skill.description}
+                          {t(skill.description)}
                         </div>
                       )}
                     </div>

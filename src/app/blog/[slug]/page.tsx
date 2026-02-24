@@ -81,7 +81,7 @@ export default async function BlogPostPage({
 
         {/* Content */}
         <article className="prose prose-lg dark:prose-invert max-w-none opacity-0 animate-fade-in-up delay-100">
-          <div className="bg-gradient-to-br from-zinc-50 to-slate-50 dark:from-zinc-900 dark:to-slate-900 p-8 md:p-12 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+          <div className="bg-gradient-to-br from-white to-slate-50 dark:from-zinc-900 dark:to-slate-900 p-8 md:p-12 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
             <p className="lead text-xl text-zinc-700 dark:text-zinc-300 mb-8">
               {post.excerpt}
             </p>

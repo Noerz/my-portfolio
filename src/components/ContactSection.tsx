@@ -25,7 +25,7 @@ export function ContactSection({ owner }: ContactSectionProps) {
             <AnimateOnScroll animation="scale" delay={100} duration={600}>
               <a
                 href={`mailto:${owner.email}`}
-                className="group p-6 bg-white dark:bg-gradient-to-br dark:from-blue-950 dark:to-cyan-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
+                className="group p-6 bg-gradient-to-br from-white to-blue-50 dark:from-blue-950 dark:to-cyan-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
               >
                 <div className="text-3xl mb-3">📧</div>
                 <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
@@ -44,7 +44,7 @@ export function ContactSection({ owner }: ContactSectionProps) {
                 href={owner.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-6 bg-white dark:bg-gradient-to-br dark:from-purple-950 dark:to-pink-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
+                className="group p-6 bg-gradient-to-br from-white to-purple-50 dark:from-purple-950 dark:to-pink-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
               >
                 <div className="text-3xl mb-3">🐙</div>
                 <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
@@ -63,7 +63,7 @@ export function ContactSection({ owner }: ContactSectionProps) {
                 href={owner.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-6 bg-white dark:bg-gradient-to-br dark:from-green-950 dark:to-teal-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
+                className="group p-6 bg-gradient-to-br from-white to-green-50 dark:from-green-950 dark:to-teal-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
               >
                 <div className="text-3xl mb-3">👔</div>
                 <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">

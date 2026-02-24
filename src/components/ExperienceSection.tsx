@@ -27,7 +27,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
             delay={index * 150}
             duration={600}
           >
-            <div className="bg-white dark:bg-gradient-to-br dark:from-zinc-900 dark:to-slate-900 p-6 md:p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-gradient-to-br from-white to-slate-50 dark:from-zinc-900 dark:to-slate-900 p-6 md:p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
               <div>
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
@@ -44,7 +44,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
             </div>
 
             <p className="text-sm md:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4">
-              {exp.description}
+              {t(exp.description)}
             </p>
 
             {exp.achievements && exp.achievements.length > 0 && (
@@ -59,7 +59,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
                       className="text-sm text-zinc-700 dark:text-zinc-300 flex items-start gap-2"
                     >
                       <span className="text-green-600 dark:text-green-400 mt-0.5">▸</span>
-                      <span>{achievement}</span>
+                      <span>{t(achievement)}</span>
                     </li>
                   ))}
                 </ul>

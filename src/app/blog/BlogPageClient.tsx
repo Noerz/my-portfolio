@@ -137,7 +137,7 @@ export function BlogPageClient({ posts }: BlogPageClientProps) {
                   >
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="block group bg-white dark:bg-zinc-900 rounded-xl p-6 border border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-500 transition-all hover:shadow-lg"
+                      className="block group bg-gradient-to-br from-white to-slate-50 dark:from-zinc-900 dark:to-zinc-800 rounded-xl p-6 border border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-500 transition-all hover:shadow-lg"
                     >
                       <div className="flex items-start justify-between gap-4 mb-3">
                         <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">

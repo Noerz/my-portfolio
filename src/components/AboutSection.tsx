@@ -16,7 +16,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
       <div className="max-w-3xl mx-auto space-y-6">
         <AnimateOnScroll animation="fade-up" duration={600}>
           <div className="prose dark:prose-invert max-w-none text-sm md:text-base">
-            <div className="bg-white dark:bg-gradient-to-br dark:from-zinc-900 dark:to-blue-950 p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+            <div className="bg-gradient-to-br from-white to-blue-50 dark:from-zinc-900 dark:to-blue-950 p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
               <div className="text-4xl mb-4">
                 <span
                   role="img"
@@ -29,7 +29,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
               <p className="leading-relaxed text-base mb-4 text-zinc-700 dark:text-zinc-300">
                 {t("about.intro1")}
               </p>
-              <p className="leading-relaxed text-base mb-4">
+              <p className="leading-relaxed text-base mb-4 text-zinc-700 dark:text-zinc-300">
                 {t("about.intro2")}
               </p>
               {bio && <p className="leading-relaxed text-base">{bio}</p>}
@@ -39,7 +39,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
 
         <div className="grid md:grid-cols-2 gap-4">
           <AnimateOnScroll animation="slide-left" delay={100} duration={600}>
-            <div className="bg-white dark:bg-gradient-to-br dark:from-purple-950 dark:to-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 h-full">
+            <div className="bg-gradient-to-br from-white to-purple-50 dark:from-purple-950 dark:to-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 h-full">
               <div className="text-3xl mb-3">🎯</div>
               <h3 className="font-bold text-lg mb-2 text-zinc-900 dark:text-zinc-100">
                 {t("about.philosophy")}
@@ -51,7 +51,7 @@ export function AboutSection({ bio }: AboutSectionProps) {
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="slide-right" delay={100} duration={600}>
-            <div className="bg-white dark:bg-gradient-to-br dark:from-green-950 dark:to-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 h-full">
+            <div className="bg-gradient-to-br from-white to-green-50 dark:from-green-950 dark:to-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 h-full">
               <div className="text-3xl mb-3">🚀</div>
               <h3 className="font-bold text-lg mb-2 text-zinc-900 dark:text-zinc-100">
                 {t("about.approach")}

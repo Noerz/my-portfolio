@@ -27,7 +27,7 @@ export function BlogSection({ posts }: BlogSectionProps) {
             delay={index * 100}
             duration={600}
           >
-            <article className="group bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
+            <article className="group bg-gradient-to-br from-white to-blue-50/50 dark:from-zinc-900 dark:to-zinc-800 p-6 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
               <div className="flex items-start justify-between gap-2 mb-3">
                 <time className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
                   {new Date(post.date).toLocaleDateString('id-ID', {

@@ -14,8 +14,13 @@ export default async function BlogPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950">
       {/* Header */}
-      <header className="border-b border-zinc-200 dark:border-zinc-800 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-zinc-950 dark:via-blue-950 dark:to-purple-950">
-        <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <header className="relative border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 overflow-hidden">
+        {/* Mesh gradient blobs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-20 -right-20 w-60 h-60 bg-gradient-to-br from-blue-400 to-cyan-300 dark:from-blue-600 dark:to-cyan-500 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 dark:opacity-20 animate-blob"></div>
+          <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-gradient-to-br from-purple-400 to-pink-300 dark:from-purple-600 dark:to-pink-500 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 dark:opacity-20 animate-blob animation-delay-2000"></div>
+        </div>
+        <div className="relative max-w-6xl mx-auto px-4 py-16 md:py-24">
           <Link 
             href="/"
             className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 mb-8 transition-colors"

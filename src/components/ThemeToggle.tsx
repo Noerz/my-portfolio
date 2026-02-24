@@ -53,7 +53,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed bottom-20 right-4 sm:bottom-24 sm:right-8 z-50 p-3 sm:p-4 rounded-full bg-gradient-to-br from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-200 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group"
+      className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 p-3 sm:p-4 rounded-full bg-gradient-to-br from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-200 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       title={`Click to switch to ${isDark ? "light" : "dark"} mode`}
     >

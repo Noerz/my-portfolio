@@ -23,10 +23,10 @@ export function LanguageToggle({ className }: LanguageToggleProps) {
       aria-label="Change language"
     >
       <span className="text-lg sm:text-xl">
-        {language === "id" ? "🇮🇩" : "🇬🇧"}
+        {language === "id" ? "EN" : "🇮🇩"}
       </span>
       <span className="text-xs sm:text-sm font-medium text-zinc-700 dark:text-zinc-300 hidden sm:inline">
-        {language === "id" ? "ID" : "EN"}
+        {language === "id" ? "EN" : "ID"}
       </span>
     </button>
   );

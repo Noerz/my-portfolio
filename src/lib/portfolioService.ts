@@ -15,8 +15,7 @@ export const getPortfolioData = cache(async (): Promise<PortfolioData> => {
       heroName: "Mustaqim Pratama Rahmadi", // alternate name shown in Hero section
       role: "Full-Stack Developer",
       location: "Indonesia",
-      summary:
-        "Membangun aplikasi yang cepat, scalable, dan user-friendly dengan teknologi modern.",
+      summary: "hero.summary",
       avatarUrl: "/avatar.png", // Ganti dengan path avatar Anda
       email: "mustaqimpratama0@gmail.com",
       github: "https://github.com/Noerz",
@@ -28,17 +27,17 @@ export const getPortfolioData = cache(async (): Promise<PortfolioData> => {
       {
         name: "JavaScript",
         category: "language",
-        description: "ES6+, async/await, dan modular JS untuk aplikasi web.",
+        description: "skills.desc.javascript",
       },
       {
         name: "TypeScript",
         category: "language",
-        description: "Typing statis, interface, dan generics untuk codebase scalable.",
+        description: "skills.desc.typescript",
       },
       {
         name: "Dart",
         category: "language",
-        description: "Dasar sintaks dan OOP untuk pengembangan Flutter.",
+        description: "skills.desc.dart",
       },
 
       // Frontend & Mobile
@@ -76,14 +75,13 @@ export const getPortfolioData = cache(async (): Promise<PortfolioData> => {
         position: "Backend Developer",
         duration: "Mei 2025 - Sekarang",
         location: "BSD",
-        description:
-          "Mengembangkan dan memelihara tiga proyek backend menggunakan Express.js, NestJS, dan Golang, dengan fokus pada konsistensi arsitektur dan performa sistem.",
+        description: "exp.mycloudindo.desc",
         achievements: [
-          "Merancang dan membangun sistem baru yang scalable dan maintainable, serta melakukan refactor terhadap sistem lama untuk meningkatkan efisiensi dan kestabilan.",
-          "Mengoptimalkan query database dan struktur API yang menghasilkan peningkatan performa sistem hingga 40% lebih cepat pada beberapa modul utama.",
-          "Menerapkan praktik clean code, error handling yang konsisten, serta logging & monitoring terpusat untuk menjaga reliability sistem produksi.",
-          "Mengimplementasikan microservices architecture, mempercepat proses pengembangan lintas tim dan mempermudah integrasi antar modul.",
-          "Berpartisipasi dalam proses deployment ke server produksi menggunakan PM2 untuk manajemen proses dan Docker untuk containerization, memastikan environment berjalan konsisten dan mudah di-scale.",
+          "exp.mycloudindo.ach1",
+          "exp.mycloudindo.ach2",
+          "exp.mycloudindo.ach3",
+          "exp.mycloudindo.ach4",
+          "exp.mycloudindo.ach5",
         ],
         technologies: ["Express.js", "NestJS", "Golang", "PM2", "Docker"],
       },
@@ -93,11 +91,10 @@ export const getPortfolioData = cache(async (): Promise<PortfolioData> => {
         position: "Mobile Developer",
         duration: "Feb 2024 - September 2024",
         location: "Depok",
-        description:
-          "Mengintegrasikan RESTful API yang meningkatkan kecepatan respons server sebesar 25%.",
+        description: "exp.elangsystem.desc",
         achievements: [
-          "Mengembangkan aplikasi mobile multiplatform dengan FlutterFlow, mengurangi waktu pengembangan hingga 30%.",
-          "Berkontribusi dalam desain arsitektur aplikasi dan pembuatan dokumentasi teknis untuk memastikan skalabilitas dan kemudahan maintenance jangka panjang.",
+          "exp.elangsystem.ach1",
+          "exp.elangsystem.ach2",
         ],
         technologies: ["FlutterFlow", "REST API"],
       },
@@ -107,11 +104,11 @@ export const getPortfolioData = cache(async (): Promise<PortfolioData> => {
         position: "Apps Developer",
         duration: "Agustus 2022 - Desember 2022",
         location: "Jakarta Selatan",
-        description: "Membuat desain antarmuka pengguna menggunakan Figma secara efisien.",
+        description: "exp.kampusgratis.desc",
         achievements: [
-          "Mengimplementasikan API untuk integrasi data.",
-          "Membangun aplikasi menggunakan Flutter dengan manajemen state GetX.",
-          "Melakukan pengujian aplikasi untuk memastikan kualitas dan performa.",
+          "exp.kampusgratis.ach1",
+          "exp.kampusgratis.ach2",
+          "exp.kampusgratis.ach3",
         ],
         technologies: ["Figma", "Flutter", "GetX"],
       },
@@ -121,11 +118,10 @@ export const getPortfolioData = cache(async (): Promise<PortfolioData> => {
         position: "Tenaga Pengajar Kompetensi TKJ",
         duration: "Juni 2020 - Juli 2022",
         location: "Depok",
-        description:
-          "Mengajarkan materi seperti Jaringan Komputer Dasar, Pemograman Dasar, Administrasi Sistem Jaringan, serta Teknologi Layanan Jaringan kepada para murid.",
+        description: "exp.smkprisma.desc",
         achievements: [
-          "Mengelola laboratorium untuk praktek siswa.",
-          "Memasang infrastruktur jaringan untuk kebutuhan sekolah.",
+          "exp.smkprisma.ach1",
+          "exp.smkprisma.ach2",
         ],
       },
     ],
