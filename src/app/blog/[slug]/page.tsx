@@ -1,4 +1,5 @@
 import { getPortfolioData } from "@/lib/portfolioService";
+import { markdownToHtml } from "@/lib/markdown";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -21,6 +22,8 @@ export default async function BlogPostPage({
   if (!post) {
     notFound();
   }
+
+  const contentHtml = markdownToHtml(post.content);
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950">
@@ -82,58 +85,10 @@ export default async function BlogPostPage({
             <p className="lead text-xl text-zinc-700 dark:text-zinc-300 mb-8">
               {post.excerpt}
             </p>
-
-            <div className="space-y-6 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-              <p>
-                Ini adalah konten blog post. Dalam implementasi nyata, Anda bisa:
-              </p>
-              
-              <ul className="space-y-2">
-                <li>Menggunakan MDX untuk menulis blog dengan Markdown + React components</li>
-                <li>Fetch content dari CMS seperti Contentful atau Sanity</li>
-                <li>Gunakan file markdown di folder <code>content/blog/</code></li>
-                <li>Atau gunakan database untuk menyimpan artikel</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold mt-8 mb-4 text-zinc-900 dark:text-zinc-100">
-                Contoh Section
-              </h2>
-
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                exercitation ullamco laboris.
-              </p>
-
-              <div className="bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-600 p-6 rounded-r-lg my-8">
-                <p className="text-blue-900 dark:text-blue-100 font-medium">
-                  💡 <strong>Pro Tip:</strong> Ini adalah contoh callout box yang bisa digunakan 
-                  untuk highlight informasi penting.
-                </p>
-              </div>
-
-              <h3 className="text-xl font-bold mt-6 mb-3 text-zinc-900 dark:text-zinc-100">
-                Code Example
-              </h3>
-
-              <pre className="bg-zinc-900 dark:bg-zinc-950 text-zinc-100 p-4 rounded-lg overflow-x-auto">
-                <code>{`function greet(name: string) {
-  return \`Hello, \${name}!\`;
-}
-
-console.log(greet("World"));`}</code>
-              </pre>
-
-              <p>
-                Untuk blog yang lebih lengkap, saya rekomendasikan menggunakan library seperti:
-              </p>
-
-              <ul>
-                <li><strong>next-mdx-remote</strong> - Untuk MDX support</li>
-                <li><strong>gray-matter</strong> - Untuk parsing frontmatter</li>
-                <li><strong>rehype/remark plugins</strong> - Untuk syntax highlighting</li>
-              </ul>
-            </div>
+            <div
+              className="space-y-6 text-zinc-700 dark:text-zinc-300 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: contentHtml }}
+            />
           </div>
         </article>
 

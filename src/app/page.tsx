@@ -24,16 +24,16 @@ export default async function Home() {
       </div>
       
       <AboutSection bio={data.owner.bio} />
+
+      {data.experiences && data.experiences.length > 0 && (
+        <ExperienceSection experiences={data.experiences} />
+      )}
       
       {data.skills && data.skills.length > 0 && (
         <SkillsSection skills={data.skills} />
       )}
       
       <ProjectsSection projects={data.projects} />
-      
-      {data.experiences && data.experiences.length > 0 && (
-        <ExperienceSection experiences={data.experiences} />
-      )}
       
       {data.blogs && data.blogs.length > 0 && (
         <BlogSection posts={data.blogs} />

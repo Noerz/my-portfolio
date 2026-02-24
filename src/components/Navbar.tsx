@@ -10,9 +10,9 @@ export function Navbar() {
 
   const sections = [
     { id: "about", label: t("nav.about"), icon: "👤" },
+    { id: "experience", label: t("nav.experience"), icon: "🎯" },
     { id: "skills", label: t("nav.skills"), icon: "⚡" },
     { id: "projects", label: t("nav.projects"), icon: "💼" },
-    { id: "experience", label: t("nav.experience"), icon: "🎯" },
     { id: "blog", label: t("nav.blog"), icon: "📝" },
     { id: "contact", label: t("nav.contact"), icon: "📧" },
   ];

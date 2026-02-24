@@ -31,7 +31,7 @@ const translations = {
     
     // About
     "about.title": "Tentang Saya",
-    "about.intro1": "Halo! Saya seorang developer yang passionate dalam menciptakan aplikasi web yang tidak hanya berfungsi, tapi juga memberikan pengalaman yang menyenangkan bagi penggunanya.",
+    "about.intro1": "Halo! Saya seorang Backend Developer yang berfokus membangun sistem yang andal dan efisien, dengan ketertarikan pada pengembangan aplikasi mobile untuk menghadirkan pengalaman yang mulus bagi pengguna.",
     "about.intro2": "Perjalanan coding saya dimulai dari rasa penasaran: \"Bagaimana website ini bisa kerja?\" Sampai sekarang, rasa penasaran itu masih jadi bahan bakar utama saya. Setiap bug adalah teka-teki, setiap fitur baru adalah petualangan.",
     "about.philosophy": "Filosofi Kerja",
     "about.philosophyDesc": "Code yang clean bukan cuma soal estetika, tapi tentang empati ke developer lain (termasuk diri sendiri 6 bulan ke depan). SOLID principles dan component reusability adalah sahabat baik saya.",

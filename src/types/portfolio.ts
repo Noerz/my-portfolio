@@ -18,6 +18,7 @@ export interface Skill {
   name: string;
   category: 'language' | 'framework' | 'tool' | 'database' | 'other';
   level?: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+  description?: string;
 }
 
 export interface Experience {
@@ -37,6 +38,7 @@ export interface BlogPost {
   excerpt: string;
   date: string;
   slug: string;
+  content: string;
   tags?: string[];
   readTime?: string;
 }

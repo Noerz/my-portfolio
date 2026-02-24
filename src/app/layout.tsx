@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { CVDownloadToggle } from "@/components/CVDownloadToggle";
 import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
 
@@ -69,7 +70,10 @@ export default function RootLayout({
           <CustomCursor />
           {children}
           <ThemeToggle />
-          <LanguageToggle />
+          <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2">
+            <CVDownloadToggle />
+            <LanguageToggle />
+          </div>
         </LanguageProvider>
       </body>
     </html>

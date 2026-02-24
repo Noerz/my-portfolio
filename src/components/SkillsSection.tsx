@@ -47,12 +47,17 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {categorySkills.map((skill) => (
-                      <span
+                    <div
                       key={skill.name}
-                      className="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 rounded-lg text-sm font-medium border border-zinc-200 dark:border-zinc-700 hover:scale-105 transition-transform"
-                      >
-                      {skill.name}
-                      </span>
+                      className="px-3 py-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 rounded-lg text-sm font-medium border border-zinc-200 dark:border-zinc-700 hover:scale-105 transition-transform"
+                    >
+                      <div>{skill.name}</div>
+                      {skill.description && (
+                        <div className="text-xs font-normal text-zinc-600 dark:text-zinc-300 mt-1">
+                          {skill.description}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>

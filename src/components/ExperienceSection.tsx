@@ -14,7 +14,11 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   if (!experiences || experiences.length === 0) return null;
 
   return (
-    <Section id="experience" title={t("experience.title")}>
+    <Section
+      id="experience"
+      title={t("experience.title")}
+      className="pt-4 sm:pt-6 md:pt-8"
+    >
       <div className="max-w-3xl mx-auto space-y-6">
         {experiences.map((exp, index) => (
           <AnimateOnScroll
