@@ -99,14 +99,14 @@ export function Hero({ data }: HeroProps) {
             {cvOpen && (
               <div className="absolute left-1/2 -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0 mt-2 w-48 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 backdrop-blur-xl shadow-xl p-2 z-50">
                 <a
-                  href="/ATS_MustaqimPratamaRahmadi(Programer)-ID.pdf"
+                  href="/MustaqimPratamaRahmadi_Resume_FullstackDeveloper.pdf"
                   download
                   className="block px-4 py-2.5 rounded-lg text-sm text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                 >
                   🇮🇩 {t("hero.cvIndonesia")}
                 </a>
                 <a
-                  href="/ATS_MustaqimPratamaRahmadi(Programer)-EN.pdf"
+                  href="/MustaqimPratamaRahmadi_Resume_FullstackDeveloper_EN.pdf"
                   download
                   className="block px-4 py-2.5 rounded-lg text-sm text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                 >

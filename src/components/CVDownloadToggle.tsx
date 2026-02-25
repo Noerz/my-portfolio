@@ -59,7 +59,7 @@ export function CVDownloadToggle({ className }: CVDownloadToggleProps) {
           role="menu"
         >
           <a
-            href="/ATS_MustaqimPratamaRahmadi(Programer)-ID.pdf"
+            href="/MustaqimPratamaRahmadi_Resume_FullstackDeveloper.pdf"
             download
             className="block px-3 py-2 rounded-lg text-sm text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100/80 dark:hover:bg-zinc-800/80 transition-colors"
             role="menuitem"
@@ -67,7 +67,7 @@ export function CVDownloadToggle({ className }: CVDownloadToggleProps) {
             CV Indonesia
           </a>
           <a
-            href="/ATS_MustaqimPratamaRahmadi(Programer)-EN.pdf"
+            href="/MustaqimPratamaRahmadi_Resume_FullstackDeveloper_EN.pdf"
             download
             className="block px-3 py-2 rounded-lg text-sm text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100/80 dark:hover:bg-zinc-800/80 transition-colors"
             role="menuitem"
