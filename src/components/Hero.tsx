@@ -2,6 +2,7 @@
 
 import { PortfolioData } from "@/types/portfolio";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ShimmerText } from "@/components/magicui/ShimmerText";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
@@ -30,9 +31,9 @@ export function Hero({ data }: HeroProps) {
   
   return (
     <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-      {/* Avatar */}
+      {/* Avatar with glow ring */}
       <div className="opacity-0 animate-scale-in">
-        <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-4 ring-blue-500/20 dark:ring-purple-500/20 shadow-xl">
+        <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-4 ring-blue-500/20 dark:ring-purple-500/20 shadow-xl animate-glow-ring">
           {data.avatarUrl ? (
             <Image
               src={data.avatarUrl}
@@ -52,9 +53,11 @@ export function Hero({ data }: HeroProps) {
       {/* Content */}
       <div className="flex flex-col gap-4 md:gap-6 flex-1 text-center md:text-left">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight opacity-0 animate-fade-in-up">
-          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-cyan-400 dark:via-purple-500 dark:to-pink-500 bg-clip-text text-transparent inline-block">
-            {data.heroName ?? data.name}
-          </span>
+          <ShimmerText shimmerColor="rgba(168, 85, 247, 0.4)" duration="4s">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-cyan-400 dark:via-purple-500 dark:to-pink-500 bg-clip-text text-transparent inline-block">
+              {data.heroName ?? data.name}
+            </span>
+          </ShimmerText>
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-medium opacity-0 animate-fade-in-up delay-100">
           {data.role} • {data.location}
@@ -65,13 +68,14 @@ export function Hero({ data }: HeroProps) {
         <div className="flex flex-col sm:flex-row gap-3 mt-2 opacity-0 animate-fade-in-up delay-300 justify-center md:justify-start">
           <a
             href="#projects"
-            className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+            className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 animate-gradient-shift"
+            style={{ backgroundSize: "200% 200%" }}
           >
             {t("hero.viewProjects")}
           </a>
           <a
             href="#contact"
-            className="rounded-full border-2 border-zinc-400 dark:border-zinc-600 text-zinc-700 dark:text-zinc-200 px-6 py-2.5 text-sm font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 transition-all duration-300"
+            className="rounded-full border-2 border-zinc-400 dark:border-zinc-600 text-zinc-700 dark:text-zinc-200 px-6 py-2.5 text-sm font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300"
           >
             {t("hero.contact")}
           </a>
@@ -80,7 +84,7 @@ export function Hero({ data }: HeroProps) {
           <div ref={cvMenuRef} className="relative">
             <button
               onClick={() => setCvOpen((prev) => !prev)}
-              className="rounded-full border-2 border-green-500 dark:border-green-400 text-green-600 dark:text-green-400 px-6 py-2.5 text-sm font-semibold hover:bg-green-50 dark:hover:bg-green-950 hover:scale-105 transition-all duration-300 inline-flex items-center gap-2"
+              className="rounded-full border-2 border-green-500 dark:border-green-400 text-green-600 dark:text-green-400 px-6 py-2.5 text-sm font-semibold hover:bg-green-50 dark:hover:bg-green-950 hover:scale-105 hover:shadow-lg hover:shadow-green-500/15 transition-all duration-300 inline-flex items-center gap-2"
             >
               📄 {t("hero.downloadCV")}
               <svg
@@ -97,7 +101,7 @@ export function Hero({ data }: HeroProps) {
             </button>
 
             {cvOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0 mt-2 w-48 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 backdrop-blur-xl shadow-xl p-2 z-50">
+              <div className="absolute left-1/2 -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0 mt-2 w-48 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-xl p-2 z-50">
                 <a
                   href="/MustaqimPratamaRahmadi_Resume_FullstackDeveloper.pdf"
                   download

@@ -2,11 +2,11 @@
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,7 +68,9 @@ export default function RootLayout({
         <LanguageProvider>
           <CustomCursor />
           {children}
-          <ThemeToggle />
+          <section className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 p-3 pb-1  rounded-full shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 group dark:border-white dark:border">
+            <AnimatedThemeToggler />
+          </section>
           {/* Language toggle above theme toggle */}
           <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-8 z-[60]">
             <LanguageToggle />

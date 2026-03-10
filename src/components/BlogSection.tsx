@@ -3,6 +3,7 @@
 import { Section } from "@/components/Section";
 import { BlogPost } from "@/types/portfolio";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
+import { SpotlightCard } from "@/components/magicui/SpotlightCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 
@@ -27,51 +28,56 @@ export function BlogSection({ posts }: BlogSectionProps) {
             delay={index * 100}
             duration={600}
           >
-            <article className="group bg-gradient-to-br from-white to-blue-50/50 dark:from-zinc-900 dark:to-zinc-800 p-6 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
-              <div className="flex items-start justify-between gap-2 mb-3">
-                <time className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
-                  {new Date(post.date).toLocaleDateString('id-ID', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                  })}
-                </time>
-                {post.readTime && (
-                  <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                    ⏱️ {post.readTime}
-                  </span>
-                )}
-              </div>
-
-              <h3 className="text-lg font-bold mb-2 text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
-                {post.title}
-              </h3>
-
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4 line-clamp-3 leading-relaxed">
-                {post.excerpt}
-              </p>
-
-              {post.tags && post.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-1 bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded-md font-medium"
-                    >
-                      #{tag}
+            <SpotlightCard
+              className="rounded-xl h-full"
+              spotlightColor="rgba(59, 130, 246, 0.1)"
+            >
+              <article className="magic-card group bg-gradient-to-br from-white to-blue-50/50 dark:from-zinc-900 dark:to-zinc-800 p-6 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 shadow-sm h-full flex flex-col">
+                <div className="flex items-start justify-between gap-2 mb-3">
+                  <time className="text-xs font-medium text-zinc-500 dark:text-zinc-400 px-2 py-0.5 bg-zinc-100/80 dark:bg-zinc-800/80 rounded-full">
+                    {new Date(post.date).toLocaleDateString('id-ID', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}
+                  </time>
+                  {post.readTime && (
+                    <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                      ⏱️ {post.readTime}
                     </span>
-                  ))}
+                  )}
                 </div>
-              )}
 
-              <a
-                href={`/blog/${post.slug}`}
-                className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:gap-2 transition-all"
-              >
-                {t("blog.readMore")}
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
-            </article>
+                <h3 className="text-lg font-bold mb-2 text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4 line-clamp-3 leading-relaxed flex-grow">
+                  {post.excerpt}
+                </p>
+
+                {post.tags && post.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {post.tags.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2 py-1 bg-blue-50/80 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 rounded-md font-medium border border-blue-200/50 dark:border-blue-800/50"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <a
+                  href={`/blog/${post.slug}`}
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:gap-2 transition-all mt-auto"
+                >
+                  {t("blog.readMore")}
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </article>
+            </SpotlightCard>
           </AnimateOnScroll>
         ))}
       </div>
@@ -81,7 +87,7 @@ export function BlogSection({ posts }: BlogSectionProps) {
           <div className="mt-8 text-center">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
             >
               {t("blog.viewAll")} ({posts.length})
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

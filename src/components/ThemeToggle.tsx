@@ -1,87 +1,168 @@
-"use client";
+// "use client";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+// export function ThemeToggle() {
+//   const [mounted, setMounted] = useState(false);
+//   const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    
-    // Check current theme
-    const storedTheme = localStorage.getItem("theme");
-    
-    if (!storedTheme) {
-      // Default to dark mode if no theme is set
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    } else {
-      const isDarkMode = storedTheme === "dark";
-      if (isDarkMode) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-      setIsDark(isDarkMode);
-    }
-  }, []);
+//   useEffect(() => {
+//     setMounted(true);
+//     const storedTheme = localStorage.getItem("theme");
 
-  const toggleTheme = () => {
-    console.log("Toggle clicked, current isDark:", isDark); // Debug log
-    
-    if (isDark) {
-      // Switch to light
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-      console.log("Switched to light mode"); // Debug log
-    } else {
-      // Switch to dark
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-      console.log("Switched to dark mode"); // Debug log
-    }
-  };
+//     if (!storedTheme) {
+//       document.documentElement.classList.add("dark");
+//       localStorage.setItem("theme", "dark");
+//       setIsDark(true);
+//     } else {
+//       const isDarkMode = storedTheme === "dark";
+//       if (isDarkMode) {
+//         document.documentElement.classList.add("dark");
+//       } else {
+//         document.documentElement.classList.remove("dark");
+//       }
+//       setIsDark(isDarkMode);
+//     }
+//   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+//   const toggleTheme = () => {
+//     if (isDark) {
+//       document.documentElement.classList.remove("dark");
+//       localStorage.setItem("theme", "light");
+//       setIsDark(false);
+//     } else {
+//       document.documentElement.classList.add("dark");
+//       localStorage.setItem("theme", "dark");
+//       setIsDark(true);
+//     }
+//   };
 
-  return (
-    <button
-      onClick={toggleTheme}
-      className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 p-3 sm:p-4 rounded-full bg-gradient-to-br from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-200 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group"
-      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
-      title={`Click to switch to ${isDark ? "light" : "dark"} mode`}
-    >
-      {!isDark ? (
-        // Moon icon - clicking will enable dark mode
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:rotate-12 transition-transform duration-300"
-        >
-          <path
-            fillRule="evenodd"
-            d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ) : (
-        // Sun icon - clicking will enable light mode
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-900 group-hover:rotate-90 transition-transform duration-300"
-        >
-          <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-        </svg>
-      )}
-    </button>
-  );
-}
+//   if (!mounted) {
+//     return null;
+//   }
+
+//   return (
+//     <button
+//       onClick={toggleTheme}
+//       className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 group"
+//       style={{
+//         background: isDark
+//           ? "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)"
+//           : "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)",
+//         boxShadow: isDark
+//           ? "0 0 20px rgba(99, 102, 241, 0.3), 0 4px 15px rgba(0,0,0,0.3)"
+//           : "0 0 20px rgba(251, 191, 36, 0.4), 0 4px 15px rgba(0,0,0,0.1)",
+//       }}
+//       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+//       title={`Switch to ${isDark ? "light" : "dark"} mode`}
+//     >
+//       <div className="relative w-6 h-6 sm:w-7 sm:h-7">
+//         {/* Sun */}
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//           className="absolute inset-0 w-full h-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+//           style={{
+//             color: isDark ? "#818cf8" : "#ffffff",
+//             transform: isDark ? "rotate(-90deg) scale(0)" : "rotate(0deg) scale(1)",
+//             opacity: isDark ? 0 : 1,
+//           }}
+//         >
+//           {/* Sun center circle */}
+//           <circle cx="12" cy="12" r="4" />
+//           {/* Sun rays */}
+//           <line x1="12" y1="1" x2="12" y2="3" />
+//           <line x1="12" y1="21" x2="12" y2="23" />
+//           <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+//           <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+//           <line x1="1" y1="12" x2="3" y2="12" />
+//           <line x1="21" y1="12" x2="23" y2="12" />
+//           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+//           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+//         </svg>
+
+//         {/* Moon */}
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//           className="absolute inset-0 w-full h-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+//           style={{
+//             color: isDark ? "#e0e7ff" : "#fbbf24",
+//             transform: isDark ? "rotate(0deg) scale(1)" : "rotate(90deg) scale(0)",
+//             opacity: isDark ? 1 : 0,
+//           }}
+//         >
+//           {/* Moon crescent */}
+//           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+//         </svg>
+
+//         {/* Stars that appear in dark mode */}
+//         <div
+//           className="absolute inset-0 transition-all duration-700"
+//           style={{
+//             opacity: isDark ? 1 : 0,
+//             transform: isDark ? "scale(1)" : "scale(0.5)",
+//           }}
+//         >
+//           <span
+//             className="absolute w-1 h-1 rounded-full bg-indigo-200"
+//             style={{
+//               top: "2px",
+//               right: "0px",
+//               animation: isDark ? "theme-star-twinkle 2s ease-in-out infinite" : "none",
+//               animationDelay: "0s",
+//             }}
+//           />
+//           <span
+//             className="absolute w-0.5 h-0.5 rounded-full bg-indigo-300"
+//             style={{
+//               top: "0px",
+//               right: "10px",
+//               animation: isDark ? "theme-star-twinkle 2s ease-in-out infinite" : "none",
+//               animationDelay: "0.6s",
+//             }}
+//           />
+//           <span
+//             className="absolute w-1 h-1 rounded-full bg-indigo-100"
+//             style={{
+//               bottom: "4px",
+//               right: "2px",
+//               animation: isDark ? "theme-star-twinkle 2s ease-in-out infinite" : "none",
+//               animationDelay: "1.2s",
+//             }}
+//           />
+//         </div>
+
+//         {/* Sun glow rays that appear in light mode */}
+//         <div
+//           className="absolute inset-[-4px] transition-all duration-500"
+//           style={{
+//             opacity: isDark ? 0 : 0.5,
+//             animation: isDark ? "none" : "theme-rays-spin 8s linear infinite",
+//           }}
+//         >
+//           {[0, 45, 90, 135].map((deg) => (
+//             <span
+//               key={deg}
+//               className="absolute left-1/2 top-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-white to-transparent"
+//               style={{
+//                 transform: `translate(-50%, -50%) rotate(${deg}deg)`,
+//                 opacity: 0.6,
+//               }}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </button>
+//   );
+// }

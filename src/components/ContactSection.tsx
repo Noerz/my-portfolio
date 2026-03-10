@@ -3,6 +3,8 @@
 import { Section } from "@/components/Section";
 import { PortfolioData } from "@/types/portfolio";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
+import { MagneticButton } from "@/components/magicui/MagneticButton";
+import { SpotlightCard } from "@/components/magicui/SpotlightCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ContactSectionProps {
@@ -23,56 +25,77 @@ export function ContactSection({ owner }: ContactSectionProps) {
         <div className="grid md:grid-cols-3 gap-4 mt-4">
           {owner.email && (
             <AnimateOnScroll animation="scale" delay={100} duration={600}>
-              <a
-                href={`mailto:${owner.email}`}
-                className="group p-6 bg-gradient-to-br from-white to-blue-50 dark:from-blue-950 dark:to-cyan-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
-              >
-                <div className="text-3xl mb-3">📧</div>
-                <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
-                  {t("contact.email")}
-                </div>
-                <div className="text-sm text-blue-600 dark:text-blue-400 group-hover:underline break-all">
-                  {owner.email}
-                </div>
-              </a>
+              <MagneticButton strength={0.15} className="h-full w-full">
+                <SpotlightCard
+                  className="rounded-xl h-full"
+                  spotlightColor="rgba(59, 130, 246, 0.12)"
+                >
+                  <a
+                    href={`mailto:${owner.email}`}
+                    className="magic-card group p-6 bg-gradient-to-br from-white to-blue-50 dark:from-blue-950/50 dark:to-cyan-950/50 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 block h-full"
+                  >
+                    <div className="text-3xl mb-3">📧</div>
+                    <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
+                      {t("contact.email")}
+                    </div>
+                    <div className="text-sm text-blue-600 dark:text-blue-400 group-hover:underline break-all">
+                      {owner.email}
+                    </div>
+                  </a>
+                </SpotlightCard>
+              </MagneticButton>
             </AnimateOnScroll>
           )}
 
           {owner.github && (
             <AnimateOnScroll animation="scale" delay={200} duration={600}>
-              <a
-                href={owner.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-6 bg-gradient-to-br from-white to-purple-50 dark:from-purple-950 dark:to-pink-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
-              >
-                <div className="text-3xl mb-3">🐙</div>
-                <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
-                  {t("contact.github")}
-                </div>
-                <div className="text-sm text-purple-600 dark:text-purple-400 group-hover:underline">
-                  @{owner.github.split("/").pop()}
-                </div>
-              </a>
+              <MagneticButton strength={0.15} className="h-full w-full">
+                <SpotlightCard
+                  className="rounded-xl h-full"
+                  spotlightColor="rgba(168, 85, 247, 0.12)"
+                >
+                  <a
+                    href={owner.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="magic-card group p-6 bg-gradient-to-br from-white to-purple-50 dark:from-purple-950/50 dark:to-pink-950/50 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 block h-full"
+                  >
+                    <div className="text-3xl mb-3">🐙</div>
+                    <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
+                      {t("contact.github")}
+                    </div>
+                    <div className="text-sm text-purple-600 dark:text-purple-400 group-hover:underline">
+                      @{owner.github.split("/").pop()}
+                    </div>
+                  </a>
+                </SpotlightCard>
+              </MagneticButton>
             </AnimateOnScroll>
           )}
 
           {owner.linkedin && (
             <AnimateOnScroll animation="scale" delay={300} duration={600}>
-              <a
-                href={owner.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-6 bg-gradient-to-br from-white to-green-50 dark:from-green-950 dark:to-teal-950 rounded-xl border border-zinc-200 dark:border-zinc-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block h-full"
-              >
-                <div className="text-3xl mb-3">👔</div>
-                <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
-                  {t("contact.linkedin")}
-                </div>
-                <div className="text-sm text-green-600 dark:text-green-400 group-hover:underline">
-                  {t("contact.profile")}
-                </div>
-              </a>
+              <MagneticButton strength={0.15} className="h-full w-full">
+                <SpotlightCard
+                  className="rounded-xl h-full"
+                  spotlightColor="rgba(34, 197, 94, 0.12)"
+                >
+                  <a
+                    href={owner.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="magic-card group p-6 bg-gradient-to-br from-white to-green-50 dark:from-green-950/50 dark:to-teal-950/50 rounded-xl border border-zinc-200/80 dark:border-zinc-700/80 block h-full"
+                  >
+                    <div className="text-3xl mb-3">👔</div>
+                    <div className="font-semibold mb-1 text-zinc-900 dark:text-zinc-100">
+                      {t("contact.linkedin")}
+                    </div>
+                    <div className="text-sm text-green-600 dark:text-green-400 group-hover:underline">
+                      {t("contact.profile")}
+                    </div>
+                  </a>
+                </SpotlightCard>
+              </MagneticButton>
             </AnimateOnScroll>
           )}
         </div>

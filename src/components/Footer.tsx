@@ -10,10 +10,17 @@ export function Footer({ ownerName }: FooterProps) {
   const { t } = useLanguage();
   
   return (
-    <footer className="mt-auto py-12 text-center text-sm text-zinc-500 dark:text-zinc-400 border-t border-zinc-200 dark:border-zinc-800">
-      <p className="opacity-0 animate-fade-in">
-        © {new Date().getFullYear()} {ownerName}. {t("footer.builtWith")} ❤️ {t("footer.and")} Next.js
-      </p>
+    <footer className="mt-auto relative">
+      {/* Shimmer gradient line */}
+      <div className="footer-shimmer-line" />
+      
+      <div className="py-12 text-center text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="opacity-0 animate-fade-in">
+          © {new Date().getFullYear()} {ownerName}. {t("footer.builtWith")}{" "}
+          <span className="inline-block animate-subtle-float">❤️</span>{" "}
+          {t("footer.and")} Next.js
+        </p>
+      </div>
     </footer>
   );
 }
