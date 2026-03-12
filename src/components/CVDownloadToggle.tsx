@@ -28,17 +28,17 @@ export function CVDownloadToggle({ className }: CVDownloadToggleProps) {
     <div ref={menuRef} className={`relative ${className || ""}`.trim()}>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl rounded-full shadow-lg border border-zinc-200/50 dark:border-zinc-800/50 hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in"
+        className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl rounded-full shadow-lg border border-zinc-200/50 dark:border-zinc-800/50 hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in text-zinc-900 dark:text-zinc-100"
         style={{ animationDelay: "350ms" }}
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label="Download CV"
       >
-        <span className="text-xs sm:text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <span className="text-xs sm:text-sm font-medium text-zinc-900 dark:text-zinc-100">
           Download CV
         </span>
         <svg
-          className={`w-4 h-4 text-zinc-600 dark:text-zinc-300 transition-transform duration-200 ${
+          className={`w-4 h-4 text-zinc-900 dark:text-zinc-100 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
           viewBox="0 0 20 20"

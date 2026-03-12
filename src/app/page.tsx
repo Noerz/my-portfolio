@@ -16,7 +16,7 @@ export default async function Home() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col dark:bg-zinc-950">
+      <main className="min-h-screen flex flex-col bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50">
       <div className="relative bg-white dark:bg-zinc-950 border-b border-zinc-200/50 dark:border-zinc-800/50 overflow-hidden">
         {/* Magic UI background */}
         <HeroBackground />
@@ -45,7 +45,7 @@ export default async function Home() {
       <ContactSection owner={data.owner} />
       
       <Footer ownerName={data.owner.name} />
-      </div>
+      </main>
     </>
   );
 }
